@@ -1,0 +1,5 @@
+#!/bin/sh
+
+clay build
+git subtree push --prefix build origin gh-pages
+rm -rf build/   
