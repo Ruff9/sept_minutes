@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,7 +21,11 @@ jobs:
 
       - name: Build site
         run: clay build
+  
+  deploy:
+    runs-on: ubuntu-latest
 
+    steps:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
