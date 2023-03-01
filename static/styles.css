@@ -3,7 +3,7 @@ body {
   font-size: 26px;
   line-height: 1.5;
   color: #333;
-  background: #fefefe;
+  background: #FFFD82;
   text-align: center;
 }
 
@@ -14,12 +14,10 @@ main {
 }
 
 h1 {
-  font-family: "Pacifico", cursive;
+  font-family: "DynoPuff", cursive;
   font-size: 72px;
   font-weight: bold;
-  color: #a3312d;
-  letter-spacing: -1px;
-  line-height: 1;
+  color: #E2A099;
   margin: 110px 0 50px;
   border: 20px;
 }
