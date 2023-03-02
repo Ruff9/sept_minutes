@@ -14,6 +14,7 @@ exclude:
   - "package-lock.json"
   - "README.md"
   - "build/*"
+  - "notes"
 
 # Shell-style patterns files/folders that *must be* copied, even if
 # they are in the exclude list.
