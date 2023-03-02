@@ -22,3 +22,12 @@ h1 {
   color: #E2A099;
   border: 20px;
 }
+
+.play-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.play-button {
+  cursor: pointer;
+}
