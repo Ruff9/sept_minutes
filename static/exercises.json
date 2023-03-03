@@ -1,17 +1,17 @@
 {
   "exercises": [
-    { "name": "Jumping jacks", "image": "nope.png"},
-    { "name": "Wall sit", "image": "nope2.png"},
-    { "name": "Push-ups", "image": "nope3.png"},
-    { "name": "Abdominal crunches"},
-    { "name": "Step-up onto a chair"},
-    { "name": "Squats"},
-    { "name": "Triceps dip on a chair"},
-    { "name": "Plank"},
-    { "name": "High knees"},
-    { "name": "Lunges"},
-    { "name": "Push-ups with rotation"},
-    { "name": "Side plank right"},
-    { "name": "Side plank left"}
+    { "name": "Jumping jacks", "sound": "jumping_jacks" },
+    { "name": "Wall sit", "sound": "wall_sit" },
+    { "name": "Push-ups", "sound": "push_ups" },
+    { "name": "Abdominal crunches", "sound": "abdominal_crunches" },
+    { "name": "Step-up on a chair", "sound": "" },
+    { "name": "Squats", "sound": "squats" },
+    { "name": "Triceps dips on a chair", "sound": "triceps_dips" },
+    { "name": "Plank", "sound": "plank" },
+    { "name": "High knees", "sound": "high_knees" },
+    { "name": "Lunges", "sound": "lunges" },
+    { "name": "Push-ups with rotation", "sound": "push_ups_rotation" },
+    { "name": "Side plank right", "sound": "side_plank_right" },
+    { "name": "Side plank left", "sound": "side_plank_left" }
   ]
 }
