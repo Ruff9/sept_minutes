@@ -1,7 +1,17 @@
 {
   "exercises": [
-    { "name": "Exo 1", "image": "nope.png"},
-    { "name": "Exo 2", "image": "nope2.png"},
-    { "name": "Exo 3", "image": "nope3.png"}
+    { "name": "Jumping jacks", "image": "nope.png"},
+    { "name": "Wall sit", "image": "nope2.png"},
+    { "name": "Push-ups", "image": "nope3.png"},
+    { "name": "Abdominal crunches"},
+    { "name": "Step-up onto a chair"},
+    { "name": "Squats"},
+    { "name": "Triceps dip on a chair"},
+    { "name": "Plank"},
+    { "name": "High knees"},
+    { "name": "Lunges"},
+    { "name": "Push-ups with rotation"},
+    { "name": "Side plank right"},
+    { "name": "Side plank left"}
   ]
 }

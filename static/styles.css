@@ -17,10 +17,14 @@ body {
 
 h1 {
   font-family: "DynaPuff", cursive;
-  font-size: 72px;
+  font-size: 2em;
   font-weight: 700;
   color: #E2A099;
   border: 20px;
+}
+
+.workout-container {
+  height: 85px;
 }
 
 .play-button-container {
@@ -30,4 +34,10 @@ h1 {
 
 .play-button {
   cursor: pointer;
+}
+
+.timer-container {
+  font-size: 1.5em;
+  color: #04C4CA;
+  font-weight: bold;
 }
