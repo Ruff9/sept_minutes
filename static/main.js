@@ -17,7 +17,7 @@ playButton.onclick = async function() {
 
 async function startWorkout() {
   for (let i = 0; i < exercises.length; i++) { 
-    await startRest()
+    await startRest(exercises[i])
       .then(function () {
         return startExercise(exercises[i]);
       })
@@ -36,13 +36,30 @@ function startExercise(exercise) {
   });
 }
 
-function startRest() {
+function startRest(exercise) {
   return new Promise(function (resolve) {
     timerResolve = resolve;
-
     displayTitle("Rest")
     startTimer(10);
+
+    playInfoSound(exercise);
   });
+}
+
+function playInfoSound(exercise) {
+  function playNextExercice() {
+    let sound = new Audio(currentURL + '/static/sound/next_exercise.m4a');
+    sound.play();
+
+    setTimeout(playExerciseName, 1800);
+  }
+  
+  function playExerciseName() {
+    const exo_audio = new Audio(currentURL + '/static/sound/' + exercise.sound + '.m4a')
+    exo_audio.play();
+  }
+
+  playNextExercice();
 }
 
 function startTimer(maxTime) {
