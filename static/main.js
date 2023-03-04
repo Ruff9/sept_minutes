@@ -1,5 +1,6 @@
 const currentURL = location.hostname === "0.0.0.0" ? "" : "/sept_minutes";
 const exercises = await getExercises();
+let timerResolve;
 
 async function getExercises() {
   const res = await fetch(currentURL + '/static/exercises.json')
@@ -12,35 +13,33 @@ const playButton = document.querySelector("#play-button");
 
 playButton.onclick = async function() {
   document.getElementById("play-button-container").remove();
-  startWorkout();
+  workout();
 };
 
-async function startWorkout() {
+async function workout() {
   for (let i = 0; i < exercises.length; i++) { 
-    await startRest(exercises[i])
-      .then(function () {
-        return startExercise(exercises[i]);
-      })
+    await timedRest(exercises[i])
+      .then(function () { return timedExercise(exercises[i]); })
       .catch((error) => console.error(error));
   };
+
+  setTimeout(playSound("congratulation.m4a"), 1500);
 }
 
-let timerResolve;
-
-function startExercise(exercise) {
+function timedExercise(exercise) {
   return new Promise(function (resolve) {
     timerResolve = resolve;
 
     displayTitle(exercise.name)
-    startTimer(30);
+    setTimer(30);
   });
 }
 
-function startRest(exercise) {
+function timedRest(exercise) {
   return new Promise(function (resolve) {
     timerResolve = resolve;
     displayTitle("Rest")
-    startTimer(10);
+    setTimer(10);
 
     playInfoSound(exercise);
   });
@@ -48,7 +47,7 @@ function startRest(exercise) {
 
 function playInfoSound(exercise) {
   function playNextExercice() {
-    let sound = new Audio(currentURL + '/static/sound/next_exercise.m4a');
+    const sound = new Audio(currentURL + '/static/sound/next_exercise.m4a');
     sound.play();
 
     setTimeout(playExerciseName, 1800);
@@ -59,25 +58,32 @@ function playInfoSound(exercise) {
     exo_audio.play();
   }
 
-  playNextExercice();
+  setTimeout(playNextExercice, 1500);
 }
 
-function startTimer(maxTime) {
+function playSound(file) {
+  const audio = new Audio(currentURL + '/static/sound/' + file)
+  audio.play();
+}
+
+function setTimer(maxTime) {
   let timerEl = document.getElementById("timer-container");
   let current = 0;
-
   timerEl.innerHTML = current;
 
   function add_time() {
     current++;
     timerEl.innerHTML = current;
+
+    if (current == maxTime - 2) { playSound("countdown.wav") }
+
     if (current >= maxTime) {
       clearInterval(timer);
       timerResolve();
     }
   };
 
-  let timer = setInterval(add_time, 1000);
+  const timer = setInterval(add_time, 1000);
 }
 
 function displayTitle(title) {

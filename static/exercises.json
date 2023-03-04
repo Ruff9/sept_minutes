@@ -4,7 +4,7 @@
     { "name": "Wall sit", "sound": "wall_sit" },
     { "name": "Push-ups", "sound": "push_ups" },
     { "name": "Abdominal crunches", "sound": "abdominal_crunches" },
-    { "name": "Step-up on a chair", "sound": "" },
+    { "name": "Step-up on a chair", "sound": "step_up_chair" },
     { "name": "Squats", "sound": "squats" },
     { "name": "Triceps dips on a chair", "sound": "triceps_dips" },
     { "name": "Plank", "sound": "plank" },
